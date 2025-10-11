@@ -1,20 +1,19 @@
-from src.power import power_function
-from src.constants import SAMPLE_CONSTANT
+from src.calc import calc
 
-
-def main() -> None:
-    """
-    Обязательнная составляющая программ, которые сдаются. Является точкой входа в приложение
-    :return: Данная функция ничего не возвращает
-    """
-
-    target, degree = map(int, input("Введите два числа разделенные пробелом: ").split(" "))
-
-    result = power_function(target=target, power=degree)
-
-    print(result)
-
-    print(SAMPLE_CONSTANT)
-
+def main():
+    data1 = input().replace('//','#')#замена символа // на #
+    number=''
+    sp=[]
+    for k in range(len(data1)-1):#проверка на ошибки
+        if data1[k] not in '0123456789*/%#+- ':
+            raise ValueError('Неккоректный символ')
+    last_c = '1'
+    for c in data1:#проверка на два символа идущих подряд
+        if  c in '*/-+%#' and last_c in '*/-+%#':
+            raise ValueError('два знака не могут идти подряд')
+        if c != ' ':
+            last_c = c
+    print(calc(data1))#вызываем функцию калк
 if __name__ == "__main__":
     main()
+
