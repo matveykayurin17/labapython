@@ -13,6 +13,11 @@ class TestCalc:
             calc('5**5')
             calc('5%%5')
             calc('5--5')
+            calc('1+')
+            calc('*1')
+            calc('111')
+            calc('111 111')
+            calc('+')
     def test_numbers(self):
         assert calc('5+5')==10
         assert calc('5*5')==25

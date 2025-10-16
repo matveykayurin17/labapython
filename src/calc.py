@@ -25,7 +25,9 @@ def calc(expr: str) -> float|int:
             continue
         else:
             ed.append(expr[y])
-    if len(ed)==1 or len(ed)==2 or ed[-1] in FULL_OPERATORS or ed[0] in OPERATORS:
+    if ed[-1] in FULL_OPERATORS or ed[0] in OPERATORS:
+        raise ValueError('Неккоректный ввод')
+    if '+' not in ed and '-' not in ed and '*' not in ed and '/' not in ed and '#' not in ed and '%' not in ed:
         raise ValueError('Неккоректный ввод')
     operators1={'+':operator.add,'/':operator.truediv,'*':operator.mul}
     stack_for_operators = parse_expression(expr)
