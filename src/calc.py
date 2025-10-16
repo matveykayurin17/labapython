@@ -1,7 +1,7 @@
 from src.constants import NUMBERS_AND_OPERATORS,FULL_OPERATORS
 from src.parsing import parse_expression
 import operator
-def calc(expr: str) -> float|int|str:
+def calc(expr: str) -> float|int:
     """
     Функция вычисляет выражение
     :param expr: принимает входную строку
@@ -21,7 +21,7 @@ def calc(expr: str) -> float|int|str:
         raise ValueError('пустую строку нельзя поддавать на ввод')
     operators1={'+':operator.add,'/':operator.truediv,'*':operator.mul}
     stack_for_operators = parse_expression(expr)
-    stack_for_numbers:list[str|float|int] = []
+    stack_for_numbers:list[float|int] = []
     for i in stack_for_operators:
         if i.isdigit():
             stack_for_numbers.append(float(i))
