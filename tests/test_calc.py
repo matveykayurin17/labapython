@@ -27,3 +27,7 @@ class TestCalc:
         assert calc('5/5')==1
         assert calc('5+5/2')==7.5
         assert calc('7*7*7')==343
+        assert calc('7*5-3')==32
+        assert calc('   1000//   5  ')==200
+        assert calc('100%5*20')==0
+        assert calc('123%3')==0
