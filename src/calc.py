@@ -1,4 +1,4 @@
-from src.constants import NUMBERS_AND_OPERATORS,FULL_OPERATORS
+from src.constants import NUMBERS_AND_OPERATORS,FULL_OPERATORS,OPERATORS
 from src.parsing import parse_expression
 import operator
 def calc(expr: str) -> float|int:
@@ -19,6 +19,14 @@ def calc(expr: str) -> float|int:
             last_c = c
     if expr=='':
         raise ValueError('пустую строку нельзя поддавать на ввод')
+    ed=[]
+    for y in range(len(expr)):
+        if expr[y]==' ':
+            continue
+        else:
+            ed.append(expr[y])
+    if len(ed)==1 or len(ed)==2 or ed[-1] in FULL_OPERATORS or ed[0] in OPERATORS:
+        raise ValueError('Неккоректный ввод')
     operators1={'+':operator.add,'/':operator.truediv,'*':operator.mul}
     stack_for_operators = parse_expression(expr)
     stack_for_numbers:list[float|int] = []
