@@ -14,11 +14,11 @@ class TestCalc:
             calc('5%%5')
             calc('5--5')
     def test_numbers(self):
-        assert(calc('5+5'), 10)
-        assert(calc('5*5'), 25)
-        assert(calc('5-5'), 0)
-        assert(calc('5%5'),0)
-        assert(calc('5//5'),1)
-        assert(calc('5/5'),1)
-        assert(calc('5+5/2'),7.5)
-        assert(calc('7*7*7'),343)
+        assert calc('5+5')==10
+        assert calc('5*5')==25
+        assert calc('5-5')==0
+        assert calc('5%5')==0
+        assert calc('5//5')==1
+        assert calc('5/5')==1
+        assert calc('5+5/2')==7.5
+        assert calc('7*7*7')==343

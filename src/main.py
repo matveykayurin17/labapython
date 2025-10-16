@@ -4,4 +4,3 @@ def main()->None:
     print(calc(data1))#вызываем функцию калк
 if __name__ == "__main__":
     main()
-

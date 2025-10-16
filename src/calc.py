@@ -1,7 +1,7 @@
 from src.constants import NUMBERS_AND_OPERATORS,FULL_OPERATORS
 from src.parsing import parse_expression
 import operator
-def calc(expr: str) -> float|int:
+def calc(expr: str) -> float|int|str:
     """
     Функция вычисляет выражение
     :param expr: принимает входную строку
