@@ -31,3 +31,15 @@ class TestCalc:
         assert calc('   1000//   5  ')==200
         assert calc('100%5*20')==0
         assert calc('123%3')==0
+        assert calc('8*8')==64
+        assert calc('9*9-9')==72
+        assert calc('9+9')==18
+        assert calc('7*7')==49
+        assert calc('5+5*5')==30
+        assert calc('6*6')==36
+        assert calc('4+4+4+4')==16
+        assert calc('14*10')==140
+        assert calc('4-1-1-1-1')==0
+        assert calc('7-7')==0
+        assert calc('7%7')==0
+        assert calc('4*3*2')==24
