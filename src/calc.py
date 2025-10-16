@@ -3,6 +3,7 @@ from src.parsing import parse_expression
 import operator
 def calc(expr: str) -> float|int:
     """
+    Функция проверяет корректность ввода
     Функция вычисляет выражение
     :param expr: принимает входную строку
     :return: значение арифмитического выражения
