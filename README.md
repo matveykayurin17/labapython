@@ -15,10 +15,10 @@
     │       ├── main.py                        # Main файл
     │       ├── parsing.py                     # Файл содержащий в себе две функции, преобразующие входные данные
     │       ├── power.py                       #
-    │   ├── tests/                             # Unit тесты
+    │   ├── tests/                             # тесты
     │       ├── __init__.py                    #
     │       ├── __pycache__.py                 #
-    │       ├── tests.py                       # unit тесты калькулятора
+    │       ├── tests.py                       # pytest тесты калькулятора
     │   ├── uv.lock                            # зависимости проекта
     │   ├── .gitignore                         # git ignore файл
     │   ├── .pre-commit-config.yaml            # Code-style проверка
