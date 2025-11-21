@@ -1,21 +1,21 @@
-# Используем официальный Python образ
-FROM python:3.12-slim
+FROM python:3.11-slim
 
-# Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Копируем зависимости сначала для кэширования
-COPY requirements.txt .
-COPY uv.lock .
+# Копируем зависимости
+COPY requirements.txt ./
 
 # Устанавливаем зависимости
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Копируем весь проект
-COPY . .
+# Копируем исходный код
+COPY src/ ./src/
+COPY tests/ ./tests/
+COPY pyproject.toml ./
+COPY README.md ./
 
-# Устанавливаем рабочую директорию для src
-WORKDIR /app/labapython/src
+# Устанавливаем рабочую директорию
+WORKDIR /app
 
-# Запускаем main.py
-CMD ["python", "main.py"]
+# Запускаем main.py из папки src
+CMD ["python", "src/main.py"]
