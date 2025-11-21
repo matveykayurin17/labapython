@@ -1,4 +1,4 @@
-from src.constants import NUMBERS,OPERATORS
+from constants import NUMBERS,OPERATORS
 def rpn1(data: str) -> str:
     """
     Перевод входной строки в обратную польскую нотацию по алгоритму Дейкстры

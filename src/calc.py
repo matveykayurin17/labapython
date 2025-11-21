@@ -1,5 +1,5 @@
-from src.constants import NUMBERS_AND_OPERATORS,FULL_OPERATORS,OPERATORS
-from src.parsing import parse_expression
+from constants import NUMBERS_AND_OPERATORS,FULL_OPERATORS,OPERATORS
+from parsing import parse_expression
 import operator
 def calc(expr: str) -> float|int:
     """
