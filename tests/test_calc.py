@@ -43,3 +43,11 @@ class TestCalc:
         assert calc('7-7')==0
         assert calc('7%7')==0
         assert calc('4*3*2')==24
+        assert calc('6*6/6')==6
+        assert calc ('7//6')==1
+        assert calc('12-12+12//12')==1
+        assert calc('4+5*10')==54
+        assert calc('12//3')==4
+        assert calc('4%5')==4
+        assert calc('1  -1')==0
+        assert calc('17+17')==34
