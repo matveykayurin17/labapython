@@ -2,20 +2,11 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Копируем зависимости
-COPY requirements.txt ./
+COPY . .
 
-# Устанавливаем зависимости
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Копируем исходный код
-COPY src/ ./src/
-COPY tests/ ./tests/
-COPY pyproject.toml ./
-COPY README.md ./
+# Добавляем папку src в PYTHONPATH
+ENV PYTHONPATH="/app/src:${PYTHONPATH}"
 
-# Устанавливаем рабочую директорию
-WORKDIR /app
-
-# Запускаем main.py из папки src
 CMD ["python", "src/main.py"]
