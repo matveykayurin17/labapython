@@ -1,12 +1,15 @@
 FROM python:3.11-slim
 
-WORKDIR /app
 
-COPY . .
+WORKDIR /app/src
 
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements.txt /app/
 
 
-ENV PYTHONPATH=/app/src
+RUN pip install --no-cache-dir -r /app/requirements.txt
 
-CMD ["python", "src/main.py"]
+
+COPY src/ ./
+
+
+CMD ["python", "main.py"]
